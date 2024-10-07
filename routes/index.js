@@ -1,9 +1,8 @@
-var express = require('express');
-var router = express.Router();
+import emailRoute from "./email.routes.js";
+import express from "express";
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+const router = express.Router(); // Define a router, not app
 
-module.exports = router;
+router.use("/email", emailRoute); // Use the router to handle /email routes
+
+export default router;
